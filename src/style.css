@@ -25,3 +25,11 @@ body{font-family:system-ui;background:#112137;color:#eff5ff;margin:0}main{max-wi
         transition-duration: .01ms !important;
     }
 }
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+h1 {
+    animation: fade-up .8s ease-out;
+}
