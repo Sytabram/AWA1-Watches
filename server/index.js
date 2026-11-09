@@ -1,4 +1,8 @@
 import express from 'express';
-const app=express();
-app.get('/api/items',(_req,res)=>res.json([{id:1,title:'CSS',description:'Première animation'},{id:2,title:'SVG',description:'Icône animée'},{id:3,title:'GSAP',description:'Séquence interactive'}]));
-app.listen(3001,()=>console.log('API sur http://localhost:3001/api/items'));
+import { readFileSync } from 'node:fs';
+
+const watches = JSON.parse(readFileSync(new URL('./data/watches.json', import.meta.url)));
+const app = express();
+
+app.get('/api/watches', (_req, res) => res.json(watches));
+app.listen(3001, () => console.log('API sur http://localhost:3001/api/watches'));
