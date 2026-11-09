@@ -17,7 +17,7 @@ onMounted(async () => {
     <p v-if="loading">Chargement…</p>
     <p v-if="error" role="alert">{{ error }}</p>
     <section class="grid">
-      <article v-for="w in watches" :key="w.id" class="card">
+      <article v-for="w in watches" :key="w.id" class="card" tabindex="0">
         <img :src="w.image" :alt="w.nom" />
         <p class="type">{{ w.type }}</p>
         <h2>{{ w.nom }}</h2>
