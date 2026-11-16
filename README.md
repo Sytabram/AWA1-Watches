@@ -11,3 +11,7 @@ Node.js LTS and npm.
 1. Install dependencies: `npm install`
 2. Terminal 1: `npm run server` (API at `http://localhost:3001/api/watches`)
 3. Terminal 2: `npm run dev` (open the URL shown by Vite)
+
+## Credits
+- Watch icon (`WatchIcon.vue`): original SVG drawn for this project.
+- Watch photos and data: Tissot official website, used for educational purposes only.
