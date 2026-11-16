@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
+import WatchIcon from './components/WatchIcon.vue';
 const watches = ref([]), loading = ref(true), error = ref('');
 const featured = computed(() => watches.value.find(w => w.vedette));
 const filter = ref('Toutes');
@@ -30,7 +31,7 @@ onMounted(async () => {
       <p class="lead">Douze montres suisses choisies pour leur élégance et leur fiabilité.</p>
       <a class="btn" href="#collection">Découvrir la collection</a>
     </div>
-    <img v-if="featured" :src="featured.image" :alt="featured.nom" class="hero-img">
+    <a href="#collection" class="watch-link"><WatchIcon /></a>
   </section>
 
   <main id="collection">
