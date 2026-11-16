@@ -1,0 +1,19 @@
+/* Cards: highlight on hover and keyboard focus (transition) */
+.card { transition: transform .3s ease, box-shadow .3s ease; }
+.card:hover, .card:focus-visible { transform: scale(1.04); box-shadow: 0 12px 30px rgb(0 0 0 / .25); }
+
+/* Title: fade in on page load (keyframes) */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+h1 { animation: fade-up .8s ease-out; }
+
+/* SVG watch: minute hand makes a full turn (transition) */
+.minute { transform-origin: center; transition: transform 1s ease-in-out; }
+.watch-link:hover .minute, .watch-link:focus-visible .minute { transform: rotate(360deg); }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

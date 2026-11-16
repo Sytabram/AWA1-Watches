@@ -1,0 +1,6 @@
+:root { --cream:#F6F2EA; --ink:#1C2230; --navy:#1F2A44; --gold:#B08D57; --muted:#6B6F7A; --panel:#EFE9DD; --line:#E4DDCF; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, system-ui, sans-serif; background: var(--cream); color: var(--ink); }
+h1, h2, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+.muted { color: var(--muted); }
