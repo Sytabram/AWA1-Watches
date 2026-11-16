@@ -33,6 +33,9 @@ main { max-width: 1280px; margin: 0 auto; padding: 72px 6vw; }
     .hero { flex-direction: column; text-align: center; }
     .hero-img { width: 70%; }
 }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.filters button { padding: 10px 20px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font: inherit; cursor: pointer; }
+.filters button.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
 
 /* Animations */
 .card { transition: transform .3s ease, box-shadow .3s ease; }

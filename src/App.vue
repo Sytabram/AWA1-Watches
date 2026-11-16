@@ -2,6 +2,11 @@
 import { computed, onMounted, ref } from 'vue';
 const watches = ref([]), loading = ref(true), error = ref('');
 const featured = computed(() => watches.value.find(w => w.vedette));
+const filter = ref('Toutes');
+const types = computed(() => ['Toutes', ...new Set(watches.value.map(w => w.type))]);
+const filtered = computed(() =>
+    filter.value === 'Toutes' ? watches.value : watches.value.filter(w => w.type === filter.value)
+);
 onMounted(async () => {
   try {
     const response = await fetch('/api/watches');
@@ -30,11 +35,15 @@ onMounted(async () => {
 
   <main id="collection">
     <h2 class="section-title">Notre collection</h2>
-    <p class="muted">{{ watches.length }} montres Swiss Made</p>
+    <p class="muted">{{ filtered.length }} montres Swiss Made</p><div class="filters">
+    <button v-for="t in types" :key="t" :class="{ active: t === filter }"
+            :aria-pressed="t === filter" @click="filter = t">{{ t }}</button>
+  </div>
+
     <p v-if="loading">Chargement…</p>
     <p v-if="error" role="alert">{{ error }}</p>
     <section class="grid">
-      <article v-for="w in watches" :key="w.id" class="card" tabindex="0">
+      <article v-for="w in filtered" :key="w.id" class="card" tabindex="0">
         <img :src="w.image" :alt="w.nom">
         <div class="card-body">
           <p class="type">{{ w.type }}</p>
