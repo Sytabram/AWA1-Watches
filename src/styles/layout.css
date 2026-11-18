@@ -8,11 +8,22 @@ h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin: 16px 0; }
 .btn { display: inline-block; margin-top: 16px; padding: 16px 28px; border-radius: 10px; background: var(--gold); color: var(--navy); font-weight: 600; }
 
 .watch-svg { width: min(40vw, 380px); display: block; }
-.dial { fill: var(--cream); stroke: var(--gold); stroke-width: 6; }
-.crown { fill: var(--gold); }
-.hour, .minute { stroke: var(--navy); stroke-linecap: round; }
-.hour { stroke-width: 8; }
-.minute { stroke-width: 5; }
+.case { fill: #C9CDD3; stroke: #9AA0A8; stroke-width: 2; }
+.crown, .hub { fill: var(--gold); }
+.dial { fill: #141C30; }
+.tick { stroke: var(--cream); stroke-width: 3; stroke-linecap: round; }
+.numeral { fill: var(--cream); font: 13px 'Playfair Display', serif; text-anchor: middle; }
+.bridge { fill: none; stroke: #9AA0A8; stroke-width: 9; stroke-linecap: round; opacity: .45; }
+.gear { fill: none; stroke-width: 6; }
+.gear-gold { stroke: var(--gold); stroke-dasharray: 4 3; }
+.gear-steel { stroke: #C9CDD3; stroke-dasharray: 3 2.5; }
+.gear-inner { fill: none; stroke: var(--gold); stroke-width: 1.5; }
+.balance { fill: none; stroke: #C9CDD3; stroke-width: 2; }
+.subdial { fill: none; stroke: var(--cream); opacity: .6; }
+.seconds { stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; }
+.hour, .minute { stroke: var(--cream); stroke-linecap: round; }
+.hour { stroke-width: 7; }
+.minute { stroke-width: 4; }
 
 main { max-width: 1280px; margin: 0 auto; padding: 72px 6vw; }
 .section-title { font-size: 2.75rem; margin: 0; }
