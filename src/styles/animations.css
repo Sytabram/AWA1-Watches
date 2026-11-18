@@ -9,8 +9,15 @@
 }
 h1 { animation: fade-up .8s ease-out; }
 
-/* SVG watch: minute hand makes a full turn (transition) */
-.minute { transform-origin: center; transition: transform 1s ease-in-out; }
+/* SVG watch: minute hand turns once on load, then on hover and keyboard focus */
+@keyframes hand-turn {
+    to { transform: rotate(360deg); }
+}
+.minute {
+    transform-origin: center;
+    transition: transform 1s ease-in-out;
+    animation: hand-turn 1.2s ease-in-out .6s;
+}
 .watch-link:hover .minute, .watch-link:focus-visible .minute { transform: rotate(360deg); }
 
 /* Accessibility */
